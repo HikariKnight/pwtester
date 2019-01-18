@@ -11,7 +11,7 @@ Then the program checks the result we get and checks to see if the remainder of 
 HaveIBeenPWned.
 
 For more information, check out Troy Hunt's blogpost here: [here](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/)<br/>
-Note: Troy Hunt is the owner of [haveibeenpwned](https://haveibeenpwned.com)
+Note: Troy Hunt is the creator of [haveibeenpwned](https://haveibeenpwned.com)
 
 ![image of a non compromised password](https://i.imgur.com/WOPa0XO.png)
 ![example of when a password is confirmed as compromised by the API results](https://i.imgur.com/GP0GTDA.png)
