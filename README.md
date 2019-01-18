@@ -38,4 +38,5 @@ The source is fully available and you are free to view it yourself.
 git clone https://github.com/hikariknight/HIBPWNED_pwtester.git
 cd HIBPWNED_pwtester
 pip3 install wheel PyQt certifi
-python3 main.py```
+python3 main.py
+```
