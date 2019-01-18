@@ -29,14 +29,14 @@ The source is fully available and you are free to view it yourself.
 * README.md - Youre reading this file right now
 
 **Install instructions for Windows and MacOSX**<br/>
-1. Download the binary for your platform from: https://github.com/HikariKnight/HIBPWNED_pwtester/releases
+1. Download the binary for your platform from: https://github.com/HikariKnight/pwtester/releases
 2. Unzip/Extract the files from the archive you downloaded
 3. Run the Password Tester executable
 
 **Install instructions for Linux (or run from source if you have python3 and git installed)**<br/>
 ```
-git clone https://github.com/hikariknight/HIBPWNED_pwtester.git
-cd HIBPWNED_pwtester
+git clone https://github.com/hikariknight/pwtester.git
+cd pwtester
 pip3 install wheel PyQt certifi
 python3 main.py
 ```
