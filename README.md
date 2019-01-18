@@ -17,7 +17,7 @@ Plus there are already several CLI versions of this.
 __Why Qt?__<br/>
 It is a GUI framework I know inside-out.
 
-__Is this going to steal my password?!__
+__Is this going to steal my password?!__<br/>
 NO!
 The source is fully available and you are free to view it yourself.
 * main.py - Main script file, contains less than 80 lines of python3 code and almost line by line explaination of the script
