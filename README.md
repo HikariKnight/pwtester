@@ -13,6 +13,11 @@ HaveIBeenPWned.
 For more information, check out Troy Hunt's blogpost here: [here](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/)<br/>
 Note: Troy Hunt is the owner of [haveibeenpwned](https://haveibeenpwned.com)
 
+![image of a non compromised password](https://i.imgur.com/WOPa0XO.png)
+![example of when a password is confirmed as compromised by the API results](https://i.imgur.com/GP0GTDA.png)
+![image of a compromised password](https://i.imgur.com/zbyPfL0.png)
+
+
 **Why a GUI over CLI?**<br/>
 I wanted to make something that can be used and understood by normal people using Windows and Mac OSX,
 who does not neccessarily understand how to use a CLI program.
