@@ -9,18 +9,33 @@ same sha1 range.
 Then the program checks the result we get and checks to see if the remainder of the sha1 hash is in the returned list from
 HaveIBeenPWned.
 
-__Why a GUI over CLI?__<br/>
+For more information, check out Troy Hunt's blogpost here: [here](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/)<br/>
+Note: Troy Hunt is the owner of [haveibeenpwned](https://haveibeenpwned.com)
+
+**Why a GUI over CLI?**<br/>
 I wanted to make something that can be used and understood by normal people using Windows and Mac OSX,
 who does not neccessarily understand how to use a CLI program.
 Plus there are already several CLI versions of this.
 
-__Why Qt?__<br/>
+**Why Qt?**<br/>
 It is a GUI framework I know inside-out.
 
-__Is this going to steal my password?!__<br/>
+**Is this going to steal my password?!**<br/>
 NO!
 The source is fully available and you are free to view it yourself.
 * main.py - Main script file, contains less than 80 lines of python3 code and almost line by line explaination of the script
 * pwcheck_GUI.ui - User Interface file made in Qt Designer, there is no need for anything super flexible so why waste time programming it?
 * LICENSE - The license file, containing your use license for the program
 * README.md - Youre reading this file right now
+
+**Install instructions for Windows and MacOSX**<br/>
+1. Download the binary for your platform from: https://github.com/HikariKnight/HIBPWNED_pwtester/releases
+2. Unzip/Extract the files from the archive you downloaded
+3. Run the Password Tester executable
+
+**Install instructions for Linux (or run from source if you have python3 and git installed)**<br/>
+```bash
+git clone https://github.com/hikariknight/HIBPWNED_pwtester.git
+cd HIBPWNED_pwtester
+pip3 install wheel PyQt certifi
+python3 main.py```
