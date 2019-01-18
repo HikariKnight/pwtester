@@ -23,3 +23,4 @@ The source is fully available and you are free to view it yourself.
 * main.py - Main script file, contains less than 80 lines of python3 code and almost line by line explaination of the script
 * pwcheck_GUI.ui - User Interface file made in Qt Designer, there is no need for anything super flexible so why waste time programming it?
 * LICENSE - The license file, containing your use license for the program
+* README.md - Youre reading this file right now
