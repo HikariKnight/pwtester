@@ -60,7 +60,7 @@ class PasswordCheck(QMainWindow):
             breachCount = breachInfo.group().split(":")
             
             # Show the user how many times the password has been found in data breaches
-            self.resultLbl.setText('<html><head/><body><p>Result:<br/><span style=" color:#ff0004;">Password has been found in {} breaches!</span></p></body></html>'.format(breachCount[1]))
+            self.resultLbl.setText('<html><head/><body><p>Result:<br/><span style=" color:#ff0004;">Password has appeared in one or more data breaches!<br/>It has been sighted {} times</span></p></body></html>'.format(breachCount[1]))
         else:
             # If we do not find our sha1 password in the list, show the user that it has not showed up in any known breaches
             self.resultLbl.setText('<html><head/><body><p>Result:<br/><span style=" color:#08a700;">Password not found in any known breaches.</span></p></body></html>')
