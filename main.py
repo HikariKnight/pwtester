@@ -18,10 +18,6 @@ from PyQt5 import uic
 import ssl
 import certifi
 
-# Temporary solution to make the script work on windows so I can compile it
-if platform.system() == 'Windows':
-	ssl._create_default_https_context = ssl._create_unverified_context
-
 def get_script_path():
     return os.path.dirname(os.path.realpath(sys.argv[0]))
 
