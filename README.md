@@ -1,4 +1,4 @@
-# HIBPWNED_pwtester
+# pwtester (An anonynomous HaveIBeenPwned Password Tester)
 A GUI password tester utilizing the haveibeenpwned API for anonynomously checking if a password has been breached without exposing the password
 
 This python script lets you get a simple GUI for testing passwords in.
