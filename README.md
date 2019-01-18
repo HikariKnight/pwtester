@@ -21,7 +21,7 @@ Note: Troy Hunt is the owner of [haveibeenpwned](https://haveibeenpwned.com)
 **Why a GUI over CLI?**<br/>
 I wanted to make something that can be used and understood by normal people using Windows and Mac OSX,
 who does not neccessarily understand how to use a CLI program.
-Plus there are already several CLI versions of this.
+Plus there are already several CLI scripts and programs that interfaces with the pwnedpasswords API.
 
 **Why Qt?**<br/>
 It is a GUI framework I know inside-out.
