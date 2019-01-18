@@ -11,9 +11,15 @@ import os
 import os.path
 import re
 import hashlib
+import platform
 from urllib.request import urlopen, Request
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QMessageBox)
 from PyQt5 import uic
+import ssl
+
+# Temporary solution to make the script work on windows so I can compile it
+if platform.system() == 'Windows':
+	ssl._create_default_https_context = ssl._create_unverified_context
 
 def get_script_path():
     return os.path.dirname(os.path.realpath(sys.argv[0]))
