@@ -3,7 +3,7 @@
 """
 Created on Fri Jan 18 09:09:23 2019
 
-@author: Ove Andreas Gullteig
+@author: Ove Andreas
 """
 
 import sys
@@ -22,7 +22,7 @@ class PasswordCheck(QMainWindow):
     def __init__(self, parent=None):
         super(PasswordCheck, self).__init__(parent)
         # Load ui from pwcheck_GUI.ui
-        uic.loadUi('pwcheck_GUI.ui', self)
+        uic.loadUi("{}/{}".format(get_script_path(),'pwcheck_GUI.ui'), self)
         self.aboutButton.clicked.connect(self.aboutClicked)
         self.okButton.clicked.connect(self.okClicked)
         self.passwordEdit.returnPressed.connect(self.okClicked)
