@@ -6,6 +6,7 @@ Created on Fri Jan 18 09:09:23 2019
 @author: Ove Andreas
 """
 
+# Import libraries we use
 import sys
 import os
 import os.path
@@ -18,18 +19,26 @@ from PyQt5 import uic
 import ssl
 import certifi
 
+# Function to get the script path
 def get_script_path():
     return os.path.dirname(os.path.realpath(sys.argv[0]))
 
+# Main
 class PasswordCheck(QMainWindow):
     def __init__(self, parent=None):
         super(PasswordCheck, self).__init__(parent)
         # Load ui from pwcheck_GUI.ui
         uic.loadUi("{}/{}".format(get_script_path(),'pwcheck_GUI.ui'), self)
+        
+        # Connect buttons to functions
         self.aboutButton.clicked.connect(self.aboutClicked)
         self.okButton.clicked.connect(self.okClicked)
         self.passwordEdit.returnPressed.connect(self.okClicked)
+        
+        # Give focus to the password box
         self.passwordEdit.setFocus()
+        
+        # Show the GUI
         self.show()
         
     def okClicked(self):
@@ -61,9 +70,8 @@ class PasswordCheck(QMainWindow):
         # Display information about the small program
         QMessageBox.information(self, 'Password Tester', "A small open source program written in Python by Ove\n to check if a password has been in any known breaches\nreported to haveibeenpwned.com\n\nThe password typed in is encrypted and not exposed to haveibeenpwned, only the first 5 characters of the\nencrypted password is exposed to the API,\nthe program then checks the list from HIBPWNED\nif the remaining part is in the database.", QMessageBox.Ok)
             
-            
+# Initialize the program
 if __name__ == '__main__':
-    
     app = QApplication(sys.argv)
     ui = PasswordCheck()
     sys.exit(app.exec_())
