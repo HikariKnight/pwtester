@@ -41,7 +41,7 @@ QComboBox {
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type in a password&lt;br/&gt;Press ENTER to encrypt the password&lt;br/&gt;and test if it has been leaked in the past&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Type in a password&lt;br/&gt;Press ENTER to hash the password&lt;br/&gt;and test if it has been leaked in the past&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="margin">
        <number>3</number>
