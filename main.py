@@ -57,30 +57,36 @@ class PasswordCheck(QMainWindow):
         if testfor.search(breachedHashes):
             # If we find our password, warn the user
             QMessageBox.warning(self, 'PASSWORD BREACHED!',
-                                "The password you have entered has been found in a known breach!\
-                                Avoid using the password you just tested at all cost!", QMessageBox.Ok)
+                                'The password you have entered has been found in a known breach!'
+                                'Avoid using the password you just tested at all cost!', QMessageBox.Ok)
             breachInfo = testfor.search(breachedHashes)
             breachCount = breachInfo.group().split(":")
 
             # Show the user how many times the password has been found in data breaches
             self.resultLbl.setText(
-                '<html><head/><body><p>Result:<br/><span style=" color:#ff0004;">\
-                Password has appeared in one or more data breaches!<br/>\
-                It has been sighted {} times</span></p></body></html>'.format(breachCount[1]))
+                '<html><head/><body><p>Result:<br/><span style=" color:#ff0004;">'
+                'Password has appeared in one or more data breaches!<br/>'
+                'It has been sighted {} times</span></p></body></html>'.format(breachCount[1]))
         else:
             # If we do not find our sha1 password in the list, show the user that it has not showed up in any known breaches
             self.resultLbl.setText(
-                '<html><head/><body><p>Result:<br/><span style=" color:#08a700;">\
-                Password not found in any known breaches.</span></p></body></html>')
+                '<html><head/><body><p>Result:<br/><span style=" color:#08a700;">'
+                'Password not found in any known breaches.</span></p></body></html>')
 
     def aboutClicked(self):
+        # Write the about text
+        aboutText = "A small open source program written in Python by Ove\n"\
+            "to check if a password has been in any known breaches\n"\
+            "reported to haveibeenpwned.com\n\n"\
+            "The password typed in is encrypted and not exposed\n"\
+            "to haveibeenpwned!\n"\
+            "Only the first 5 characters of the\n"\
+            "encrypted password is exposed to the API,\n"\
+            "the program then checks the list from HIBP\n"\
+            "if the remaining part is in the database."
+
         # Display information about the small program
-        QMessageBox.information(self, 'Password Tester', "A small open source program \
-written in Python by Ove\nto check if a password has been in any known breaches \
-\nreported to haveibeenpwned.com\n\nThe password typed in is encrypted and not \
-exposed to haveibeenpwned, only the first 5 characters of the\n\
-encrypted password is exposed to the API,\nthe program then checks the list from HIBP\n\
-if the remaining part is in the database.", QMessageBox.Ok)
+        QMessageBox.information(self, 'Password Tester', aboutText, QMessageBox.Ok)
 
 
 # Initialize the program
