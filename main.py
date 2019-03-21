@@ -53,8 +53,15 @@ class PasswordCheck(QMainWindow):
         breachedHashes = breaches.read().decode("utf-8")
 
         # Check the list we got from the API to see if the remainder of our sha1 hash is in it
-        testfor = re.compile("{}:{}".format(pw[5:], "\d+"))
+        testfor = re.compile("{}:{}".format(pw[5:], r"\d+"))
+        
+        # Remove the hashed password from memory
+        del pw
+        
         if testfor.search(breachedHashes):
+            # Remove the testpattern from memory
+            del testfor
+
             # If we find our password, warn the user
             QMessageBox.warning(self, 'PASSWORD BREACHED!',
                                 'The password you have entered has been found in a known breach!'
@@ -68,6 +75,9 @@ class PasswordCheck(QMainWindow):
                 'Password has appeared in one or more data breaches!<br/>'
                 'It has been sighted {} times</span></p></body></html>'.format(breachCount[1]))
         else:
+            # Remove the test pattern from memory
+            del testfor
+
             # If we do not find our sha1 password in the list, show the user that it has not showed up in any known breaches
             self.resultLbl.setText(
                 '<html><head/><body><p>Result:<br/><span style=" color:#08a700;">'
