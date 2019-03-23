@@ -59,14 +59,16 @@ class PasswordCheck(QMainWindow):
         del pw
         
         if testfor.search(breachedHashes):
-            # Remove the testpattern from memory
-            del testfor
-
             # If we find our password, warn the user
             QMessageBox.warning(self, 'PASSWORD BREACHED!',
                                 'The password you have entered has been found in a known breach!'
                                 'Avoid using the password you just tested at all cost!', QMessageBox.Ok)
             breachInfo = testfor.search(breachedHashes)
+
+            # Remove the testpattern from memory
+            del testfor
+
+            # Get how many breaches the hash has been in
             breachCount = breachInfo.group().split(":")
 
             # Show the user how many times the password has been found in data breaches
