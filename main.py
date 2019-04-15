@@ -16,7 +16,6 @@ import ssl
 from urllib.request import urlopen, Request
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QMessageBox)
 from PyQt5 import uic
-import certifi
 
 
 # Function to get the script path
