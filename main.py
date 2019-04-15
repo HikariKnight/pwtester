@@ -12,6 +12,7 @@ import os
 import os.path
 import re
 import hashlib
+import ssl
 from urllib.request import urlopen, Request
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QMessageBox)
 from PyQt5 import uic
@@ -46,10 +47,13 @@ class PasswordCheck(QMainWindow):
         sha1 = hashlib.sha1(str(self.passwordEdit.text()).encode())
         pw = sha1.hexdigest().upper()
 
+        # Make an ssl context so we can communicate over https
+        ssl_context = ssl.SSLContext()
+
         # Open the API and get the list of all sha1 encrypted passwords that matches the first 5 characters of our sha1 password
         # an user agent is set so we can actually get the results as the page returns a forbidden error when no user agent is set
         breaches = urlopen(Request("https://api.pwnedpasswords.com/range/{}".format(
-            pw[:5]), headers={'User-Agent': 'Mozilla'}), cafile=certifi.where())
+            pw[:5]), headers={'User-Agent': 'Mozilla'}), context=ssl_context)
         breachedHashes = breaches.read().decode("utf-8")
 
         # Check the list we got from the API to see if the remainder of our sha1 hash is in it
