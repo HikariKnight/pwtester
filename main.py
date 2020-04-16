@@ -16,6 +16,12 @@ import ssl
 from urllib.request import urlopen, Request
 from qtpy.QtWidgets import (QApplication, QMainWindow, QMessageBox)
 from qtpy import uic
+import platform
+
+# If we are on Mac
+if platform.system() == "Darwin":
+    # Use PyQt5
+    os.environ["QT_API"] = "pyqt5"
 
 
 # Function to get the script path
