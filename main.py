@@ -14,8 +14,8 @@ import re
 import hashlib
 import ssl
 from urllib.request import urlopen, Request
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QMessageBox)
-from PyQt5 import uic
+from qtpy.QtWidgets import (QApplication, QMainWindow, QMessageBox)
+from qtpy import uic
 
 
 # Function to get the script path
