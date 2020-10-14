@@ -91,7 +91,7 @@ QComboBox {
      </layout>
     </item>
     <item row="1" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout2">
       <property name="leftMargin">
        <number>9</number>
       </property>
