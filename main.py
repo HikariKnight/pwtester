@@ -34,7 +34,7 @@ class PasswordCheck(QMainWindow):
     def __init__(self, parent=None):
         super(PasswordCheck, self).__init__(parent)
         # Load ui from pwcheck_GUI.ui
-        uic.loadUi("{}/{}".format(get_script_path(), 'pwcheck_GUI.ui'), self)
+        uic.loadUi("{}/{}".format(get_script_path(), 'qml/main.ui'), self)
 
         # Connect buttons to functions
         self.aboutButton.clicked.connect(self.aboutClicked)
@@ -67,11 +67,9 @@ class PasswordCheck(QMainWindow):
         # Remove the hashed password from memory
         del pw
         
+        # If we find our password, warn the user
         if testfor.search(breachedHashes):
-            # If we find our password, warn the user
-            QMessageBox.warning(self, 'PASSWORD BREACHED!',
-                                'The password you have entered has been found in a known breach!'
-                                'Avoid using the password you just tested at all cost!', QMessageBox.Ok)
+            # Search for the remainder of our hash
             breachInfo = testfor.search(breachedHashes)
 
             # Remove the testpattern from memory
@@ -85,6 +83,11 @@ class PasswordCheck(QMainWindow):
                 '<html><head/><body><p>Result:<br/><span style=" color:#ff0004;">'
                 'Password has appeared in one or more data breaches!<br/>'
                 'It has been sighted {} times</span></p></body></html>'.format(breachCount[1]))
+
+            # Show the user HEY! Your password is not secure! messagebox
+            QMessageBox.warning(self, 'PASSWORD BREACHED!',
+                                'The password you have entered has been found in a known breach!'
+                                'Avoid using the password you just tested at all cost!', QMessageBox.Ok)
         else:
             # Remove the test pattern from memory
             del testfor
@@ -99,8 +102,7 @@ class PasswordCheck(QMainWindow):
         aboutText = "A small open source program written in Python by Ove\n"\
             "to check if a password has been in any known breaches\n"\
             "reported to haveibeenpwned.com\n\n"\
-            "The password typed in is encrypted and not exposed\n"\
-            "to haveibeenpwned!\n"\
+            "The password typed in is encrypted and not exposed to haveibeenpwned!\n"\
             "Only the first 5 characters of the\n"\
             "encrypted password is exposed to the API,\n"\
             "the program then checks the list from HIBP\n"\
