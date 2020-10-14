@@ -2,7 +2,7 @@
 (An anonynomous HaveIBeenPwned Password Tester)<br/>
 A GUI password tester utilizing the haveibeenpwned API for anonynomously checking if a password has been breached without exposing the password
 
-This python script lets you get a simple GUI for testing passwords in.
+This python (and golang) script lets you get a simple GUI for testing passwords in.
 The password you type in gets hashed to sha1, then the first 5 characters are fed to the
 HaveIBeenPWned Password Checker API to get a list of all breached passwords starting with the
 same sha1 range.
@@ -46,3 +46,24 @@ cd pwtester
 pip3 install wheel PyQt certifi
 python3 main.py
 ```
+
+**Build instructions for golang version**<br/>
+1. Setup golang and the [Qt bindings for golang](https://github.com/therecipe/qt/wiki/Installation)
+2. Once that is set up, run the commands below
+   ```
+   mkdir ~/go/devel
+   git clone https://github.com/hikariknight/pwtester.git ~/go/devel/pwtester
+   cd ~/go/devel/pwtester
+   ```
+3. Build for your platform
+   Linux and MacOS
+   ```
+   ~/go/bin/qtdeploy build desktop
+
+   ```
+   Note: If you run linux and want to build for linux and windows just run `./build_go-bins.sh`
+   <br/><br/>
+   Windows:
+   ```
+   qtdeploy -ldflags -H=windowsgui build desktop
+   ```
