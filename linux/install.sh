@@ -5,6 +5,7 @@ and copy the /opt/pwtester/assets/pwtester.desktop file to /usr/share/applicatio
 To uninstall the application just run /opt/pwtester/uninstall.sh.
 
 To continue press ENTER, to quit press CTRL+C\n\n"
+read i
 
 printf "Making /opt/pwtester/\n"
 sudo mkdir -p /opt/pwtester
