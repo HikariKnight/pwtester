@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Pwtester
+GenericName=Password Tester
+Comment=A password tester that checks if the password is in the HaveIBeenPwned database
+Icon=/opt/pwtester/assets/icon.xcf
+Exec=/opt/pwtester/pwtester
+Categories=System;System-Tools;
