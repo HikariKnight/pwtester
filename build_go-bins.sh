@@ -7,8 +7,11 @@ mv "$SCRIPTDIR/deploy/linux" "$SCRIPTDIR/deploy/pwtester_linux-x86_64"
 # Cleanup empty dirs when done (if we embed files into the binary, this wont be empty)
 rmdir "$SCRIPTDIR/linux"
 
+x86_64-w64-mingw32-windres assets/icon.rc assets/icon_windows.syso 
 $HOME/go/bin/qtdeploy -docker -ldflags -H=windowsgui build windows_64_shared
 mv "$SCRIPTDIR/deploy/windows" "$SCRIPTDIR/deploy/pwtester_windows-x86_64"
+
+i686-w64-mingw32-windres assets/icon.rc assets/icon_windows.syso
 $HOME/go/bin/qtdeploy -docker -ldflags -H=windowsgui build windows_32_shared
 mv "$SCRIPTDIR/deploy/windows" "$SCRIPTDIR/deploy/pwtester_windows-x86"
 
