@@ -12,6 +12,8 @@ import (
 	"strings"
 	"time"
 
+	winico "./assets"
+
 	"github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/uitools"
 	"github.com/therecipe/qt/widgets"
@@ -25,6 +27,9 @@ func main() {
 }
 
 func newMainWindow() *widgets.QWidget {
+
+	// Trigger a function in a dummy go file so we can keep windows icons inside the ./windows folder
+	winico.ImportIcon()
 
 	// Open the .ui file from QML resources (that gets compiled into the binary)
 	file := core.NewQFile2(":/qml/main.ui")
