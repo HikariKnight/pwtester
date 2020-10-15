@@ -112,10 +112,5 @@ venv.bak/
 # ignore dolphin .directory
 .directory
 
-windows/
-darwin/
-android/
-linux/
-wasm/
 deploy/
 rcc*
