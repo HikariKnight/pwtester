@@ -11,7 +11,7 @@ printf "Making /opt/pwtester/\n"
 sudo mkdir -p /opt/pwtester
 
 printf "\nCopying files to /opt/pwtester/\n"
-sudo cp -rv "$SCRIPTDIR" /opt/pwtester/
+sudo cp -rv "$SCRIPTDIR/"* /opt/pwtester/
 
 printf "\nCopying pwtester.desktop to /usr/share/applications"
-cp -v /opt/pwtester/assets/pwtester.desktop /usr/share/applications/
+sudo cp -v /opt/pwtester/assets/pwtester.desktop /usr/share/applications/
