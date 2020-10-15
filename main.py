@@ -99,7 +99,7 @@ class PasswordCheck(QMainWindow):
 
     def aboutClicked(self):
         # Write the about text
-        aboutText = "A small open source program written in Python by Ove\n"\
+        aboutText = "A small open source program written in Python by HikariKnight\n"\
             "to check if a password has been in any known breaches\n"\
             "reported to haveibeenpwned.com\n\n"\
             "The password typed in is encrypted and not exposed to haveibeenpwned!\n"\
