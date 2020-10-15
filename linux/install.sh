@@ -13,5 +13,5 @@ sudo mkdir -p /opt/pwtester
 printf "\nCopying files to /opt/pwtester/\n"
 sudo cp -rv "$SCRIPTDIR/"* /opt/pwtester/
 
-printf "\nCopying pwtester.desktop to /usr/share/applications"
+printf "\nCopying pwtester.desktop to /usr/share/applications\n"
 sudo cp -v /opt/pwtester/assets/pwtester.desktop /usr/share/applications/
