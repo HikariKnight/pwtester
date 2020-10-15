@@ -4,6 +4,6 @@ Type=Application
 Name=Pwtester
 GenericName=Password Tester
 Comment=A password tester that checks if the password is in the HaveIBeenPwned database
-Icon=/opt/pwtester/assets/icon.xcf
+Icon=/opt/pwtester/assets/icon.png
 Exec=/opt/pwtester/pwtester
 Categories=System;System-Tools;
